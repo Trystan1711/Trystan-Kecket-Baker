@@ -1,65 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Année dans le footer
+  // ── Année footer ──────────────────────────────────────────────
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ─── ONGLETS DE FILTRAGE ───────────────────────────────────────
-  const tabs = document.querySelectorAll(".tab-btn");
-  const cards = document.querySelectorAll(".card[data-category]");
+  // ── Onglets Work / Info ───────────────────────────────────────
+  const mainTabs   = document.querySelectorAll(".tab-btn[data-tab]");
+  const sectionWork = document.getElementById("section-work");
+  const sectionInfo = document.getElementById("section-info");
 
-  tabs.forEach((btn) => {
+  mainTabs.forEach((btn) => {
     btn.addEventListener("click", () => {
-      // Mettre à jour l'onglet actif
-      tabs.forEach((t) => t.classList.remove("active"));
+      mainTabs.forEach((t) => t.classList.remove("active"));
       btn.classList.add("active");
 
-      const filter = btn.dataset.filter;
+      if (btn.dataset.tab === "work") {
+        sectionWork?.classList.remove("is-hidden");
+        sectionInfo?.classList.add("is-hidden");
+      } else {
+        sectionWork?.classList.add("is-hidden");
+        sectionInfo?.classList.remove("is-hidden");
+        // Déclencher reveal si première ouverture
+        triggerReveal();
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  // ── Filtre Dev / Design / Tous ────────────────────────────────
+  const filterBtns = document.querySelectorAll(".filter-btn[data-category]");
+  const cards      = document.querySelectorAll(".card[data-category]");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const cat = btn.dataset.category;
 
       cards.forEach((card) => {
-        if (filter === "all" || card.dataset.category === filter) {
-          card.classList.remove("hidden");
-          // Relancer l'animation de révélation
+        if (cat === "all" || card.dataset.category === cat) {
+          card.classList.remove("is-hidden");
+          // Rejouer l'animation d'entrée
           card.classList.remove("is-visible");
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => card.classList.add("is-visible"));
-          });
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => card.classList.add("is-visible"))
+          );
         } else {
-          card.classList.add("hidden");
+          card.classList.add("is-hidden");
         }
       });
     });
   });
 
-  // ─── SCROLL SMOOTH VERS #PROJECTS ─────────────────────────────
-  const heroScroll = document.querySelector(".hero-scroll");
-  const projectsSection = document.getElementById("projects");
+  // ── Scroll hero → projets ─────────────────────────────────────
+  const heroScrollBtn  = document.querySelector(".hero-scroll");
+  const projectsAnchor = document.getElementById("projects");
 
-  if (heroScroll && projectsSection) {
-    heroScroll.addEventListener("click", (e) => {
+  if (heroScrollBtn && projectsAnchor) {
+    heroScrollBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      projectsSection.scrollIntoView({ behavior: "smooth" });
+      projectsAnchor.scrollIntoView({ behavior: "smooth" });
     });
   }
 
-  // ─── ANIMATION REVEAL AU SCROLL ───────────────────────────────
-  const revealElements = document.querySelectorAll(".reveal");
+  // ── IntersectionObserver – reveal ─────────────────────────────
+  function triggerReveal() {
+    const revealEls = document.querySelectorAll(".reveal:not(.is-visible)");
+    if (!revealEls.length) return;
 
-  if ("IntersectionObserver" in window && revealElements.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-    revealElements.forEach((el) => observer.observe(el));
-  } else {
-    revealElements.forEach((el) => el.classList.add("is-visible"));
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("is-visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("is-visible"));
+    }
   }
 
+  triggerReveal();
 });

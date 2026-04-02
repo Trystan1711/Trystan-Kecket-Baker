@@ -1,95 +1,108 @@
+/* ═══════════════════════════════════
+   NAV PARTAGÉE (project + gallery pages)
+═══════════════════════════════════ */
 .projects-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 60px 30px;
-  gap: 24px;
-  border-bottom: 2px solid rgba(227, 227, 227, 0.6);
-  background: linear-gradient(135deg, rgba(255, 230, 240, 0.3), rgba(227, 243, 255, 0.3));
+  padding: 20px 60px;
+  background: rgba(13, 13, 13, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  gap: 20px;
 }
 
 .projects-header h1 {
-  font-size: 2.6rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  line-height: 1.2;
+  letter-spacing: -0.01em;
+  opacity: 0.9;
 }
 
 .switch-btn {
-  border: 2px solid #111;
-  padding: 12px 26px;
+  border: 1px solid var(--border);
+  padding: 9px 22px;
   border-radius: 999px;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: all 0.25s ease;
+  font-weight: 700;
   cursor: pointer;
   background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
 }
 
 .switch-btn:hover {
-  background: #111;
-  color: #fff;
-  border-color: #111;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
 }
 
-/* VERTICAL CARDS */
+/* ═══════════════════════════════════
+   GALERIE (dev.html / designer.html)
+═══════════════════════════════════ */
 .projects {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  padding: 40px 60px 80px;
-  background: linear-gradient(135deg, rgba(255, 230, 240, 0.4) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(227, 243, 255, 0.4) 100%);
-  min-height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 48px 60px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .project {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
-  border: 1px solid rgba(227, 227, 227, 0.7);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
-  height: 300px;
+  height: 280px;
 }
 
 .project:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
-  border-color: rgba(200, 200, 200, 0.8);
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .project img {
-  width: 40%;
+  width: 38%;
   height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
 }
 
 .project:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .overlay {
   position: absolute;
-  inset: auto 20px 20px 20px;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  color: #fff;
-  padding: 16px 18px;
-  border-radius: 14px;
+  inset: auto 16px 16px 16px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  padding: 14px 16px;
+  border-radius: 10px;
   text-align: left;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(12px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border);
 }
 
 .project:hover .overlay {
@@ -97,25 +110,114 @@
   transform: translateY(0);
 }
 
-/* ========================= */
-/* 📱 RESPONSIVE MOBILE */
-/* ========================= */
+/* ═══════════════════════════════════
+   PAGE DÉTAIL PROJET
+═══════════════════════════════════ */
+main {
+  padding: 0 60px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
 
-@media (max-width: 900px) {
+main p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: rgba(240, 240, 240, 0.72);
+  margin-bottom: 28px;
+}
+
+main h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 40px 0 16px;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+main img,
+main video {
+  width: 100%;
+  border-radius: 14px;
+  margin: 20px 0;
+  border: 1px solid var(--border);
+}
+
+main a {
+  color: var(--text);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease;
+}
+
+main a:hover {
+  border-bottom-color: var(--text);
+}
+
+/* ═══════════════════════════════════
+   FOOTER (project pages)
+═══════════════════════════════════ */
+.site-footer {
+  padding: 36px 60px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 14px;
+}
+
+.footer-name {
+  font-weight: 700;
+  font-size: 0.82rem;
+  opacity: 0.55;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links a {
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.35;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.footer-copy {
+  font-size: 0.68rem;
+  opacity: 0.25;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media (max-width: 768px) {
   .projects-header {
     flex-direction: column;
-    gap: 20px;
+    padding: 16px 20px;
     text-align: center;
-    padding: 32px 20px 20px;
-  }
-
-  .projects-header h1 {
-    font-size: 2rem;
+    gap: 14px;
   }
 
   .projects {
-    padding: 20px 20px 60px;
-    gap: 20px;
+    padding: 28px 20px 60px;
+    gap: 14px;
   }
 
   .project {
@@ -125,11 +227,20 @@
 
   .project img {
     width: 100%;
-    height: 280px;
+    height: 200px;
   }
 
-  .switch-btn {
-    width: 100%;
+  main {
+    padding: 0 20px 60px;
+  }
+
+  .site-footer {
+    padding: 28px 20px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
   }
 }
-
