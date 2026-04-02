@@ -3,19 +3,16 @@
 ═══════════════════════════════════ */
 .about-photo {
   width: 100%;
-  height: 200px; /* ← réduis cette valeur, ex: 200px au lieu de 340px */
+  /* ← supprime le height fixe */
   overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
 
 .about-photo img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* ← change "cover" en "contain" pour voir toute l'image */
-  object-position: center top;
-  background: #0d0d0d; /* ← optionnel : comble les bords si l'image ne remplit pas */
+  height: auto; /* ← l'image garde ses proportions naturelles */
+  display: block;
 }
-
 /* ═══════════════════════════════════
    NAVIGATION
 ═══════════════════════════════════ */
