@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Ajouter l'année actuelle au footer
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
   // Scroll depuis la flèche du hero vers l'aperçu des projets
   const scrollBtn = document.getElementById("scroll");
   const overviewSection = document.getElementById("overview");
@@ -39,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.2,
+        threshold: 0.15,
       }
     );
 
@@ -55,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = scroller.querySelector(".projects-track");
     if (!track) return;
 
-    const baseDuration = 28; // vitesse "normale"
-    const minDuration = 8;   // très rapide
-    const maxDuration = 40;  // très lent
+    const baseDuration = 30; // vitesse "normale"
+    const minDuration = 10;   // très rapide
+    const maxDuration = 45;  // très lent
 
     // valeur par défaut
     track.style.setProperty("--scroll-duration", `${baseDuration}s`);
@@ -79,10 +85,4 @@ document.addEventListener("DOMContentLoaded", () => {
       track.style.setProperty("--scroll-duration", `${baseDuration}s`);
     });
   });
-
-  // Année dynamique dans le footer
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear().toString();
-  }
 });

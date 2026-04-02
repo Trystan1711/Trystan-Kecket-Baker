@@ -2,72 +2,94 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 60px 20px;
-  gap: 20px;
+  padding: 50px 60px 30px;
+  gap: 24px;
+  border-bottom: 2px solid rgba(227, 227, 227, 0.6);
+  background: linear-gradient(135deg, rgba(255, 230, 240, 0.3), rgba(227, 243, 255, 0.3));
 }
 
 .projects-header h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .switch-btn {
-  border: 1px solid #111;
-  padding: 10px 20px;
+  border: 2px solid #111;
+  padding: 12px 26px;
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  transition: 0.3s;
+  letter-spacing: 0.14em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
 }
 
 .switch-btn:hover {
   background: #111;
   color: #fff;
+  border-color: #111;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* VERTICAL CARDS */
 .projects {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 20px 60px 60px;
+  gap: 28px;
+  padding: 40px 60px 80px;
+  background: linear-gradient(135deg, rgba(255, 230, 240, 0.4) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(227, 243, 255, 0.4) 100%);
+  min-height: 60vh;
 }
 
 .project {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid #e7e7e7;
-  background: linear-gradient(135deg, #fdf2ff, #f2f7ff);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border-radius: 20px;
+  border: 1px solid rgba(227, 227, 227, 0.7);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  height: 300px;
 }
 
 .project:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
-  border-color: #d7d7d7;
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+  border-color: rgba(200, 200, 200, 0.8);
 }
 
 .project img {
-  width: 100%;
-  height: 260px;
+  width: 40%;
+  height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project:hover img {
+  transform: scale(1.06);
 }
 
 .overlay {
   position: absolute;
-  inset: auto 16px 16px 16px;
-  background: rgba(0, 0, 0, 0.78);
+  inset: auto 20px 20px 20px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
   color: #fff;
-  padding: 12px 14px;
-  border-radius: 12px;
+  padding: 16px 18px;
+  border-radius: 14px;
   text-align: left;
   opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
 }
 
 .project:hover .overlay {
@@ -82,12 +104,32 @@
 @media (max-width: 900px) {
   .projects-header {
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
     text-align: center;
-    padding: 30px 20px 10px;
+    padding: 32px 20px 20px;
+  }
+
+  .projects-header h1 {
+    font-size: 2rem;
   }
 
   .projects {
-    padding: 10px 20px 40px;
+    padding: 20px 20px 60px;
+    gap: 20px;
+  }
+
+  .project {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .project img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .switch-btn {
+    width: 100%;
   }
 }
+
