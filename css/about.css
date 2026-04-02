@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
+  padding: 20px 60px 20px 280px; /* laisse de place pour la photo fixe */
   background: rgba(13, 13, 13, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -22,30 +22,44 @@
 }
 
 /* ═══════════════════════════════════
-   LAYOUT PRINCIPAL
+   PHOTO – fixe à gauche, rotation 90°
 ═══════════════════════════════════ */
-.about-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 60px 100px;
-  flex-grow: 1;
-  width: 100%;
+.about-photo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 50;
+  border-right: 1px solid var(--border);
+}
+
+.about-photo img {
+  position: absolute;
+  /* L'image occupe 100vh en "longueur" et 240px en "largeur" avant rotation */
+  width: 100vh;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  /* On centre l'image dans le conteneur pour que la rotation soit propre */
+  top: calc(50vh - 120px);
+  left: calc(120px - 50vh);
+  transform-origin: center center;
+  transform: rotate(90deg);
 }
 
 /* ═══════════════════════════════════
-   PHOTO
+   LAYOUT PRINCIPAL
 ═══════════════════════════════════ */
-.about-photo img {
+.about-main {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 60px 80px 300px; /* 300px = 240px photo + 60px gap */
+  max-width: 1200px;
+  box-sizing: border-box;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  filter: grayscale(15%);
 }
 
 /* ═══════════════════════════════════
@@ -55,6 +69,7 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  max-width: 620px;
 }
 
 .about-label {
@@ -116,10 +131,10 @@
    FOOTER
 ═══════════════════════════════════ */
 .about-footer {
-  padding: 28px 60px;
+  padding: 28px 60px 28px 300px;
   border-top: 1px solid var(--border);
   background: var(--surface);
-  text-align: center;
+  text-align: left;
 }
 
 .footer-copy {
@@ -131,18 +146,31 @@
    RESPONSIVE
 ═══════════════════════════════════ */
 @media (max-width: 900px) {
+  .about-photo {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 220px;
+    top: 0;
+    left: 0;
+    transform: none;
+    object-fit: cover;
+  }
+
   .about-nav {
     padding: 16px 20px;
   }
 
   .about-main {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 50px 20px 60px;
-  }
-
-  .about-photo img {
-    aspect-ratio: 4 / 3;
+    flex-direction: column;
+    padding: 40px 20px 60px;
+    min-height: unset;
   }
 
   .about-footer {
