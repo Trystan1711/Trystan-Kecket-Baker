@@ -28,8 +28,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 240px;
-  height: 200%;   /* toute la longueur de la page */
+  width: 500px;
+  height: 100%;   /* toute la longueur de la page */
   overflow: hidden;
   z-index: 50;
   border-right: 1px solid var(--border);
