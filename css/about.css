@@ -3,13 +3,16 @@
 ═══════════════════════════════════ */
 .about-photo {
   width: 100%;
-  height: 500px; /* hauteur du hero */
+  height: auto;
+  aspect-ratio: 16 / 5; /* garde les proportions de ton image */
   background-image: url('../img/IZZZ.png');
-  background-size: cover;
+  background-size: contain;   /* ← voir toute l'image sans zoom */
   background-position: center;
-  background-attachment: fixed; /* ← c'est ça qui la fait rester fixe au scroll */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #0d0d0d; /* comble les bords */
   border-bottom: 1px solid var(--border);
-}═══════════════════════
+}═══════════════
    NAVIGATION
 ═══════════════════════════════════ */
 .about-nav {
