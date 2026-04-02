@@ -37,16 +37,6 @@
   /* Optionnel : pour que l'image à l'intérieur ne soit pas déformée */
   object-fit: cover; 
 }
-.about-photo img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* width est définie dynamiquement par JS = hauteur réelle du conteneur */
-  height: 240px;
-  object-fit: cover;
-  object-position: center;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
 
 /* ═══════════════════════════════════
    LAYOUT PRINCIPAL
