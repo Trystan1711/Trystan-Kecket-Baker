@@ -1,33 +1,22 @@
 /* ═══════════════════════════════════
-   BASE BODY
-═══════════════════════════════════ */
-body {
-  position: relative;
-}
-
-/* ═══════════════════════════════════
-   PHOTO – colonne fixe à gauche
+   PHOTO – bannière horizontale en haut
 ═══════════════════════════════════ */
 .about-photo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100vh;
+  width: 100%;
+  height: 340px;
   overflow: hidden;
-  z-index: 50;
-  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .about-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top; /* cadre le haut de l'image en priorité */
 }
 
 /* ═══════════════════════════════════
-   NAVIGATION
+   NAVIGATION – sticky sous la bannière
 ═══════════════════════════════════ */
 .about-nav {
   position: sticky;
@@ -36,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px 20px 300px; /* 240px photo + 60px gap */
+  padding: 18px 60px;
   background: rgba(13, 13, 13, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -54,12 +43,12 @@ body {
 ═══════════════════════════════════ */
 .about-main {
   display: flex;
-  align-items: center;
-  min-height: 100vh;
-  padding: 80px 60px 80px 300px; /* 240px photo + 60px gap */
+  align-items: flex-start;
+  padding: 80px 60px;
   max-width: 1200px;
   box-sizing: border-box;
   width: 100%;
+  margin: 0 auto;
 }
 
 /* ═══════════════════════════════════
@@ -132,7 +121,7 @@ body {
    FOOTER
 ═══════════════════════════════════ */
 .about-footer {
-  padding: 28px 60px 28px 300px; /* aligné avec le contenu */
+  padding: 28px 60px;
   border-top: 1px solid var(--border);
   background: var(--surface);
   text-align: left;
@@ -148,18 +137,7 @@ body {
 ═══════════════════════════════════ */
 @media (max-width: 900px) {
   .about-photo {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    object-position: center;
+    height: 200px;
   }
 
   .about-nav {
@@ -167,9 +145,7 @@ body {
   }
 
   .about-main {
-    flex-direction: column;
     padding: 40px 20px 60px;
-    min-height: unset;
   }
 
   .about-footer {
