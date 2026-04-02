@@ -22,14 +22,14 @@
 }
 
 /* ═══════════════════════════════════
-   PHOTO – fixe à gauche, rotation 90°
+   PHOTO – absolue à gauche, toute la longueur, rotation 90°
 ═══════════════════════════════════ */
 .about-photo {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 240px;
-  height: 100vh;
+  height: 100%;   /* toute la longueur de la page */
   overflow: hidden;
   z-index: 50;
   border-right: 1px solid var(--border);
@@ -39,12 +39,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  /* Avant rotation : largeur = hauteur du conteneur, hauteur = largeur du conteneur */
-  width: 100vh;
+  /* width est définie dynamiquement par JS = hauteur réelle du conteneur */
   height: 240px;
   object-fit: cover;
   object-position: center;
-  /* Centre + rotation */
   transform: translate(-50%, -50%) rotate(90deg);
 }
 
