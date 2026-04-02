@@ -1,4 +1,32 @@
 /* ═══════════════════════════════════
+   BASE BODY
+═══════════════════════════════════ */
+body {
+  position: relative;
+}
+
+/* ═══════════════════════════════════
+   PHOTO – colonne fixe à gauche
+═══════════════════════════════════ */
+.about-photo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 50;
+  border-right: 1px solid var(--border);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ═══════════════════════════════════
    NAVIGATION
 ═══════════════════════════════════ */
 .about-nav {
@@ -8,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px 20px 280px; /* laisse de place pour la photo fixe */
+  padding: 20px 60px 20px 300px; /* 240px photo + 60px gap */
   background: rgba(13, 13, 13, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -22,30 +50,13 @@
 }
 
 /* ═══════════════════════════════════
-   PHOTO – absolue à gauche, toute la longueur, rotation 90°
-═══════════════════════════════════ */
-.about-photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 500px;
-  height: 100vh; /* vh = viewport height */
-  overflow: hidden;
-  z-index: 50;
-  border-right: 1px solid var(--border);
-  
-  /* Optionnel : pour que l'image à l'intérieur ne soit pas déformée */
-  object-fit: cover; 
-}
-
-/* ═══════════════════════════════════
    LAYOUT PRINCIPAL
 ═══════════════════════════════════ */
 .about-main {
   display: flex;
   align-items: center;
   min-height: 100vh;
-  padding: 80px 60px 80px 300px; /* 300px = 240px photo + 60px gap */
+  padding: 80px 60px 80px 300px; /* 240px photo + 60px gap */
   max-width: 1200px;
   box-sizing: border-box;
   width: 100%;
@@ -107,6 +118,7 @@
   letter-spacing: 0.06em;
   transition: all 0.22s ease;
   color: var(--text-muted);
+  text-decoration: none;
 }
 
 .about-link:hover {
@@ -120,7 +132,7 @@
    FOOTER
 ═══════════════════════════════════ */
 .about-footer {
-  padding: 28px 60px 28px 300px;
+  padding: 28px 60px 28px 300px; /* aligné avec le contenu */
   border-top: 1px solid var(--border);
   background: var(--surface);
   text-align: left;
@@ -146,10 +158,8 @@
   .about-photo img {
     width: 100%;
     height: 220px;
-    top: 0;
-    left: 0;
-    transform: none;
     object-fit: cover;
+    object-position: center;
   }
 
   .about-nav {
