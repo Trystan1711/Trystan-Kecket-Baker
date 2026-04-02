@@ -1,9 +1,9 @@
 /* ═══════════════════════════════════
-   PHOTO – bannière horizontale en haut
+   PHOTO – bannière horizontale (PC + mobile)
 ═══════════════════════════════════ */
 .about-photo {
   width: 100%;
-  height: 300px;
+  height: 340px;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
@@ -12,11 +12,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top; /* cadre le haut de l'image en priorité */
+  object-position: center top;
 }
 
 /* ═══════════════════════════════════
-   NAVIGATION – sticky sous la bannière
+   NAVIGATION
 ═══════════════════════════════════ */
 .about-nav {
   position: sticky;
@@ -44,7 +44,7 @@
 .about-main {
   display: flex;
   align-items: flex-start;
-  padding: 80px 60px;
+  padding: 40px 20px 60px;
   max-width: 1200px;
   box-sizing: border-box;
   width: 100%;
@@ -121,7 +121,7 @@
    FOOTER
 ═══════════════════════════════════ */
 .about-footer {
-  padding: 28px 60px;
+  padding: 24px 20px;
   border-top: 1px solid var(--border);
   background: var(--surface);
   text-align: left;
@@ -130,25 +130,4 @@
 .footer-copy {
   font-size: 0.68rem;
   opacity: 0.25;
-}
-
-/* ═══════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════ */
-@media (max-width: 900px) {
-  .about-photo {
-    height: 200px;
-  }
-
-  .about-nav {
-    padding: 16px 20px;
-  }
-
-  .about-main {
-    padding: 40px 20px 60px;
-  }
-
-  .about-footer {
-    padding: 24px 20px;
-  }
 }
