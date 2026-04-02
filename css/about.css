@@ -3,17 +3,13 @@
 ═══════════════════════════════════ */
 .about-photo {
   width: 100%;
-  /* ← supprime le height fixe */
-  overflow: hidden;
+  height: 500px; /* hauteur du hero */
+  background-image: url('../img/IZZZ.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* ← c'est ça qui la fait rester fixe au scroll */
   border-bottom: 1px solid var(--border);
-}
-
-.about-photo img {
-  width: 100%;
-  height: auto; /* ← l'image garde ses proportions naturelles */
-  display: block;
-}
-/* ═══════════════════════════════════
+}═══════════════════════
    NAVIGATION
 ═══════════════════════════════════ */
 .about-nav {
