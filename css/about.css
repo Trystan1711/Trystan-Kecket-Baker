@@ -8,36 +8,22 @@ body {
 /* ═══════════════════════════════════
    PHOTO – colonne fixe à gauche
 ═══════════════════════════════════ */
-/* Le conteneur (déjà existant, avec corrections) */
 .about-photo {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 500px; /* Conserver la largeur souhaitée */
-  height: 100vh; /* Utilisez 'vh' pour toute la hauteur de l'écran, comme vu précédemment */
-  overflow: hidden; /* Empêche l'image de déborder */
+  width: 240px;
+  height: 100vh;
+  overflow: hidden;
   z-index: 50;
   border-right: 1px solid var(--border);
-  
-  /* Ajout : Pour aider à centrer l'image pivotée */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* NOUVEAU : Le code pour l'image à l'intérieur */
 .about-photo img {
-  /* 1. Rotation */
-  transform: rotate(90deg); /* Faire pivoter l'image */
-  
-  /* 2. Redimensionnement (Magie CSS) */
-  /* C'est la partie cruciale : une fois pivotée, la hauteur de l'image
-     devient sa largeur, et vice versa. Nous devons les inverser ici. */
-  height: 500px; /* La hauteur de l'image pivotée devient la largeur du conteneur */
-  width: auto;   /* La largeur s'ajuste pour garder les proportions */
-
-  /* 3. Ajustement (Optionnel mais recommandé) */
-  object-fit: contain; /* Assure que toute l'image pivotée tient dans le conteneur sans être rognée */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ═══════════════════════════════════
