@@ -29,12 +29,14 @@
   top: 0;
   left: 0;
   width: 500px;
-  height: 100%;   /* toute la longueur de la page */
+  height: 100vh; /* vh = viewport height */
   overflow: hidden;
   z-index: 50;
   border-right: 1px solid var(--border);
+  
+  /* Optionnel : pour que l'image à l'intérieur ne soit pas déformée */
+  object-fit: cover; 
 }
-
 .about-photo img {
   position: absolute;
   top: 50%;
