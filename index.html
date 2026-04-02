@@ -12,6 +12,7 @@
 </head>
 <body>
 
+<!-- ── NAVIGATION ─────────────────────────────────── -->
 <nav class="site-nav">
   <a href="html/about.html" class="nav-brand">
     <span class="nav-name">Trystan Kecket-Baker</span>
@@ -19,8 +20,8 @@
   </a>
 
   <div class="nav-actions">
-    <a href="html/dev-projects.html" class="nav-btn">Dev</a>
-    <a href="html/design-projects.html" class="nav-btn">Design</a>
+    <button class="nav-btn" data-category="dev">Dev</button>
+    <button class="nav-btn" data-category="design">Design</button>
   </div>
 
   <div class="nav-links">
@@ -29,46 +30,157 @@
   </div>
 </nav>
 
-<!-- HERO BROWSER MOCKUP -->
-<main class="hero-wrap">
-  <div class="browser-mock">
-    <div class="browser-bar">
-      <div class="browser-dots">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
+<!-- ── VUE HERO ────────────────────────────────────── -->
+<div class="view-hero" id="view-hero">
+  <div class="hero-wrap">
+    <div class="browser-mock">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="browser-plus">+</span>
       </div>
-      <span class="browser-plus">+</span>
-    </div>
-    <div class="browser-content">
-      <h1 class="hero-title">
-        Je développe des<br>
-        interfaces, expériences<br>
-        &amp; <em>créations.</em>
-      </h1>
-      <div class="hero-meta">
-        <p class="hero-meta-bold">Développement web &amp; dispositifs interactifs.</p>
-        <p class="hero-meta-muted">Étudiant BUT MMI · Basé en France.</p>
-      </div>
-      <div class="hero-cta">
-        <a href="html/dev-projects.html" class="hero-btn">Développement →</a>
-        <a href="html/design-projects.html" class="hero-btn hero-btn--ghost">Artistique →</a>
+      <div class="browser-content">
+        <h1 class="hero-title">
+          Je développe des<br>
+          interfaces, expériences<br>
+          &amp; <em>créations.</em>
+        </h1>
+        <div class="hero-meta">
+          <p class="hero-meta-bold">Développement web &amp; dispositifs interactifs.</p>
+          <p class="hero-meta-muted">Étudiant BUT MMI · Basé en France.</p>
+        </div>
+        <div class="hero-hint">
+          <span class="hero-hint-arrow">↑</span>
+          <span>Choisissez une catégorie dans la barre de navigation</span>
+        </div>
       </div>
     </div>
   </div>
-</main>
+</div>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-name">Trystan Kecket-Baker · Étudiant BUT MMI</p>
-    <div class="footer-links">
-      <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-      <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-      <a href="mailto:prenom.nom@example.com">Email</a>
+<!-- ── VUE PROJETS (panneau qui glisse depuis la droite) ── -->
+<div class="view-projects" id="view-projects">
+
+  <div class="proj-inner">
+
+    <!-- En-tête avec retour + titre -->
+    <div class="proj-panel-header">
+      <button class="back-btn" id="back-btn">
+        <span class="back-arrow">←</span>
+        Retour
+      </button>
+      <h2 class="proj-panel-title" id="proj-panel-title">Développement</h2>
+      <span class="proj-panel-count" id="proj-panel-count">3 projets</span>
     </div>
-  </div>
-  <p class="footer-copy">© <span id="year"></span> Trystan Kecket-Baker</p>
-</footer>
+
+    <!-- Grille -->
+    <div class="proj-grid" id="proj-grid">
+
+      <!-- DEV -->
+      <a href="html/dev-project1.html" class="card" data-category="dev">
+        <div class="card-img">
+          <img src="img/afc2l.jpg" alt="Site AFC2L">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">01</span>
+          </div>
+          <h3>Site AFC2L</h3>
+          <p>Refonte de site d'aviation en HTML, CSS et Bootstrap.</p>
+          <div class="card-tags"><span>HTML</span><span>CSS</span><span>Bootstrap</span></div>
+        </div>
+      </a>
+
+      <a href="html/dev-project2.html" class="card" data-category="dev">
+        <div class="card-img">
+          <img src="img/salon.jpg" alt="Salon du Chocolat">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">02</span>
+          </div>
+          <h3>Salon du Chocolat</h3>
+          <p>Webdocumentaire interactif en HTML, CSS et JavaScript.</p>
+          <div class="card-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </div>
+      </a>
+
+      <a href="html/dev-project3.html" class="card" data-category="dev">
+        <div class="card-img">
+          <img src="img/acceuil.jpg" alt="Easy2Drive">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">03</span>
+          </div>
+          <h3>Easy2Drive</h3>
+          <p>Plateforme de mise en relation auto-écoles / clients avec Angular.</p>
+          <div class="card-tags"><span>Angular</span><span>PHP</span><span>API</span></div>
+        </div>
+      </a>
+
+      <!-- DESIGN -->
+      <a href="html/design-project1.html" class="card" data-category="design">
+        <div class="card-img">
+          <img src="img/cala.jpg" alt="Tête de mort 3D">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">01</span>
+          </div>
+          <h3>Tête de mort</h3>
+          <p>Modélisation 3D d'une calaveras et présentation de projets 3D.</p>
+          <div class="card-tags"><span>3D</span><span>Modélisation</span></div>
+        </div>
+      </a>
+
+      <a href="html/design-project2.html" class="card" data-category="design">
+        <div class="card-img">
+          <img src="img/hojo.webp" alt="Hojo">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">02</span>
+          </div>
+          <h3>Hojo</h3>
+          <p>Présentation de dessins réalisés au digital.</p>
+          <div class="card-tags"><span>Digital</span><span>Dessin</span></div>
+        </div>
+      </a>
+
+      <a href="html/design-project3.html" class="card" data-category="design">
+        <div class="card-img">
+          <img src="img/montage.jpg" alt="Montages vidéos">
+          <div class="card-overlay"><span>Voir le projet →</span></div>
+        </div>
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">03</span>
+          </div>
+          <h3>Montages vidéos</h3>
+          <p>Présentation de mes montages et productions vidéo.</p>
+          <div class="card-tags"><span>Vidéo</span><span>Montage</span></div>
+        </div>
+      </a>
+
+    </div><!-- /proj-grid -->
+  </div><!-- /proj-inner -->
+
+</div><!-- /view-projects -->
 
 <script src="js/main.js"></script>
 </body>
