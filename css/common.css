@@ -2,13 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, rgba(255, 230, 240, 0.6) 0%, rgba(255, 255, 255, 0.95) 40%, rgba(227, 243, 255, 0.6) 100%);
-  color: #1a1a1a;
+  background-color: #F7F4EF;
+  color: #111111;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -16,7 +15,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Footer collé en bas quand le contenu est court */
 body > footer {
   margin-top: auto;
 }
@@ -24,7 +22,7 @@ body > footer {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 img {
@@ -32,26 +30,20 @@ img {
   display: block;
 }
 
-/* Accent color that can be reused */
-.accent {
-  color: #ff5678;
-}
-
 .home-link {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  border-bottom: 2px solid #111;
-  padding-bottom: 4px;
-  transition: all 0.3s ease;
+  border-bottom: 1.5px solid #111;
+  padding-bottom: 3px;
+  transition: all 0.25s ease;
   font-weight: 600;
   display: inline-block;
+  opacity: 0.7;
 }
 
 .home-link:hover {
-  border-bottom-color: #ff5678;
-  color: #ff5678;
-  transform: translateX(-2px);
+  opacity: 1;
+  border-bottom-color: #FF5F40;
+  color: #FF5F40;
 }
-
-

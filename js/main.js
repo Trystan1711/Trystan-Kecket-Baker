@@ -1,39 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Ajouter l'année actuelle au footer
-  const yearElement = document.getElementById("year");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
 
-  // Scroll depuis la flèche du hero vers l'aperçu des projets
-  const scrollBtn = document.getElementById("scroll");
-  const overviewSection = document.getElementById("overview");
+  // Année dans le footer
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  if (scrollBtn && overviewSection) {
-    scrollBtn.addEventListener("click", () => {
-      overviewSection.scrollIntoView({
-        behavior: "smooth",
+  // ─── ONGLETS DE FILTRAGE ───────────────────────────────────────
+  const tabs = document.querySelectorAll(".tab-btn");
+  const cards = document.querySelectorAll(".card[data-category]");
+
+  tabs.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Mettre à jour l'onglet actif
+      tabs.forEach((t) => t.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach((card) => {
+        if (filter === "all" || card.dataset.category === filter) {
+          card.classList.remove("hidden");
+          // Relancer l'animation de révélation
+          card.classList.remove("is-visible");
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => card.classList.add("is-visible"));
+          });
+        } else {
+          card.classList.add("hidden");
+        }
       });
-    });
-  }
-
-  // Scroll smooth pour tous les liens internes commençant par #
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
-  internalLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const targetId = link.getAttribute("href");
-      if (!targetId || targetId === "#") return;
-
-      const target = document.querySelector(targetId);
-      if (!target) return;
-
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  // Animation d'apparition au scroll (IntersectionObserver)
+  // ─── SCROLL SMOOTH VERS #PROJECTS ─────────────────────────────
+  const heroScroll = document.querySelector(".hero-scroll");
+  const projectsSection = document.getElementById("projects");
+
+  if (heroScroll && projectsSection) {
+    heroScroll.addEventListener("click", (e) => {
+      e.preventDefault();
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+
+  // ─── ANIMATION REVEAL AU SCROLL ───────────────────────────────
   const revealElements = document.querySelectorAll(".reveal");
+
   if ("IntersectionObserver" in window && revealElements.length) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -44,45 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         });
       },
-      {
-        threshold: 0.15,
-      }
+      { threshold: 0.12 }
     );
-
     revealElements.forEach((el) => observer.observe(el));
   } else {
-    // Fallback : tout afficher si IntersectionObserver n'est pas dispo
     revealElements.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // Vitesse du carrousel contrôlée par le mouvement de la souris sur chaque ligne
-  const scrollers = document.querySelectorAll(".projects-scroller");
-  scrollers.forEach((scroller) => {
-    const track = scroller.querySelector(".projects-track");
-    if (!track) return;
-
-    const baseDuration = 30; // vitesse "normale"
-    const minDuration = 10;   // très rapide
-    const maxDuration = 45;  // très lent
-
-    // valeur par défaut
-    track.style.setProperty("--scroll-duration", `${baseDuration}s`);
-
-    scroller.addEventListener("mousemove", (event) => {
-      const rect = scroller.getBoundingClientRect();
-      const x = event.clientX - rect.left; // position de la souris dans le scroller
-      const ratio = Math.min(Math.max(x / rect.width, 0), 1); // 0 → 1
-
-      // plus on va vers la droite, plus c'est rapide
-      const duration =
-        maxDuration - ratio * (maxDuration - minDuration); // interpolation
-
-      track.style.setProperty("--scroll-duration", `${duration}s`);
-    });
-
-    scroller.addEventListener("mouseleave", () => {
-      // retour à la vitesse de base quand on sort de la zone
-      track.style.setProperty("--scroll-duration", `${baseDuration}s`);
-    });
-  });
 });
