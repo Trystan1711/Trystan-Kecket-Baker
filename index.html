@@ -12,16 +12,15 @@
 </head>
 <body>
 
-<!-- NAVIGATION -->
 <nav class="site-nav">
   <a href="html/about.html" class="nav-brand">
     <span class="nav-name">Trystan Kecket-Baker</span>
     <span class="nav-role">Étudiant BUT MMI</span>
   </a>
 
-  <div class="nav-tabs">
-    <button class="tab-btn active" data-tab="work">Work</button>
-    <button class="tab-btn" data-tab="info">Info</button>
+  <div class="nav-actions">
+    <a href="html/dev-projects.html" class="nav-btn">Dev</a>
+    <a href="html/design-projects.html" class="nav-btn">Design</a>
   </div>
 
   <div class="nav-links">
@@ -30,194 +29,35 @@
   </div>
 </nav>
 
-<!-- ═══ SECTION WORK ═══ -->
-<div class="section-work" id="section-work">
-
-  <!-- HERO BROWSER MOCKUP -->
-  <div class="hero-wrap">
-    <div class="browser-mock">
-      <div class="browser-bar">
-        <div class="browser-dots">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-        </div>
-        <span class="browser-plus">+</span>
+<!-- HERO BROWSER MOCKUP -->
+<main class="hero-wrap">
+  <div class="browser-mock">
+    <div class="browser-bar">
+      <div class="browser-dots">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
       </div>
-      <div class="browser-content">
-        <h1 class="hero-title">
-          Je développe des<br>
-          interfaces, expériences<br>
-          &amp; <em>créations.</em>
-        </h1>
-        <div class="hero-meta">
-          <p class="hero-meta-bold">Développement web &amp; dispositifs interactifs.</p>
-          <p class="hero-meta-muted">Étudiant BUT MMI · Basé en France.</p>
-        </div>
-        <a class="hero-scroll" href="#projects">↓</a>
+      <span class="browser-plus">+</span>
+    </div>
+    <div class="browser-content">
+      <h1 class="hero-title">
+        Je développe des<br>
+        interfaces, expériences<br>
+        &amp; <em>créations.</em>
+      </h1>
+      <div class="hero-meta">
+        <p class="hero-meta-bold">Développement web &amp; dispositifs interactifs.</p>
+        <p class="hero-meta-muted">Étudiant BUT MMI · Basé en France.</p>
       </div>
-    </div>
-  </div>
-
-  <!-- ZONE PROJETS -->
-  <div class="projects-section" id="projects">
-
-    <!-- Boutons de filtre -->
-    <div class="projects-filter">
-      <button class="filter-btn" data-category="dev">
-        <span class="filter-label">Développement</span>
-        <span class="filter-count">3 projets</span>
-      </button>
-      <button class="filter-btn" data-category="design">
-        <span class="filter-label">Artistique</span>
-        <span class="filter-count">3 projets</span>
-      </button>
-    </div>
-
-    <!-- Grille (cachée par défaut) -->
-    <div class="projects-grid" id="projects-grid">
-
-      <a href="html/dev-project1.html" class="card" data-category="dev">
-        <div class="card-img">
-          <img src="img/afc2l.jpg" alt="Site AFC2L">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Dev</span>
-            <span class="card-num">01</span>
-          </div>
-          <h3>Site AFC2L</h3>
-          <p>Refonte de site d'aviation en HTML, CSS et Bootstrap.</p>
-          <div class="card-tags">
-            <span>HTML</span><span>CSS</span><span>Bootstrap</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="html/dev-project2.html" class="card" data-category="dev">
-        <div class="card-img">
-          <img src="img/salon.jpg" alt="Salon du Chocolat">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Dev</span>
-            <span class="card-num">02</span>
-          </div>
-          <h3>Salon du Chocolat</h3>
-          <p>Webdocumentaire interactif en HTML, CSS et JavaScript.</p>
-          <div class="card-tags">
-            <span>HTML</span><span>CSS</span><span>JS</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="html/dev-project3.html" class="card" data-category="dev">
-        <div class="card-img">
-          <img src="img/acceuil.jpg" alt="Easy2Drive">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Dev</span>
-            <span class="card-num">03</span>
-          </div>
-          <h3>Easy2Drive</h3>
-          <p>Plateforme de mise en relation auto-écoles / clients avec Angular.</p>
-          <div class="card-tags">
-            <span>Angular</span><span>PHP</span><span>API</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="html/design-project1.html" class="card" data-category="design">
-        <div class="card-img">
-          <img src="img/cala.jpg" alt="Tête de mort 3D">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Artistique</span>
-            <span class="card-num">01</span>
-          </div>
-          <h3>Tête de mort</h3>
-          <p>Modélisation 3D d'une calaveras et présentation de projets 3D.</p>
-          <div class="card-tags">
-            <span>3D</span><span>Modélisation</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="html/design-project2.html" class="card" data-category="design">
-        <div class="card-img">
-          <img src="img/hojo.webp" alt="Hojo – Dessins digitaux">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Artistique</span>
-            <span class="card-num">02</span>
-          </div>
-          <h3>Hojo</h3>
-          <p>Présentation de dessins réalisés au digital.</p>
-          <div class="card-tags">
-            <span>Digital</span><span>Dessin</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="html/design-project3.html" class="card" data-category="design">
-        <div class="card-img">
-          <img src="img/montage.jpg" alt="Montages vidéos">
-          <div class="card-overlay"><span>Voir le projet →</span></div>
-        </div>
-        <div class="card-info">
-          <div class="card-row">
-            <span class="card-cat">Artistique</span>
-            <span class="card-num">03</span>
-          </div>
-          <h3>Montages vidéos</h3>
-          <p>Présentation de mes montages et productions vidéo.</p>
-          <div class="card-tags">
-            <span>Vidéo</span><span>Montage</span>
-          </div>
-        </div>
-      </a>
-
-    </div><!-- /projects-grid -->
-  </div><!-- /projects-section -->
-</div><!-- /section-work -->
-
-<!-- ═══ SECTION INFO ═══ -->
-<div class="section-info is-hidden" id="section-info">
-  <div class="info-inner">
-    <div class="info-photo">
-      <img src="img/MOI.png" alt="Trystan Kecket-Baker">
-    </div>
-    <div class="info-content">
-      <p class="info-label">À propos</p>
-      <h2 class="info-title">Trystan<br>Kecket-Baker</h2>
-      <p class="info-role">Étudiant BUT MMI · Développement web &amp; Dispositifs interactifs</p>
-      <p class="info-bio">
-        Passionné par le web et la création numérique, je conçois des expériences
-        qui mêlent développement front-end et créativité visuelle. En BUT Métiers
-        du Multimédia et de l'Internet, j'explore l'intégration web, la modélisation
-        3D, la vidéo et le dessin digital.
-      </p>
-      <p class="info-bio">
-        Ouvert aux stages, projets collaboratifs et nouvelles opportunités.
-      </p>
-      <div class="info-links">
-        <a href="#" target="_blank" rel="noreferrer" class="info-link">LinkedIn ↗</a>
-        <a href="#" target="_blank" rel="noreferrer" class="info-link">GitHub ↗</a>
-        <a href="mailto:prenom.nom@example.com" class="info-link">Email ↗</a>
+      <div class="hero-cta">
+        <a href="html/dev-projects.html" class="hero-btn">Développement →</a>
+        <a href="html/design-projects.html" class="hero-btn hero-btn--ghost">Artistique →</a>
       </div>
     </div>
   </div>
-</div>
+</main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-name">Trystan Kecket-Baker · Étudiant BUT MMI</p>

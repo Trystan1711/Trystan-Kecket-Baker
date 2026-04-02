@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Développement – Trystan Kecket-Baker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/listing.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="../index.html" class="nav-brand">
+    <span class="nav-name">Trystan Kecket-Baker</span>
+    <span class="nav-role">Étudiant BUT MMI</span>
+  </a>
+  <div class="nav-actions">
+    <a href="dev-projects.html" class="nav-btn active">Dev</a>
+    <a href="design-projects.html" class="nav-btn">Design</a>
+  </div>
+  <div class="nav-links">
+    <a href="#" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+    <a href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </div>
+</nav>
+
+<div class="listing-wrap">
+
+  <!-- EN-TÊTE -->
+  <header class="listing-header">
+    <a href="../index.html" class="listing-back">
+      <span class="listing-back-arrow">←</span>
+      Retour
+    </a>
+    <div class="listing-title-area">
+      <p class="listing-kicker">Projets</p>
+      <h1 class="listing-title">Développement</h1>
+      <p class="listing-count">3 projets</p>
+    </div>
+  </header>
+
+  <!-- GRILLE DE PROJETS -->
+  <section class="listing-grid">
+
+    <a href="dev-project1.html" class="card">
+      <div class="card-img">
+        <img src="../img/afc2l.jpg" alt="Site AFC2L">
+        <div class="card-overlay"><span>Voir le projet →</span></div>
+      </div>
+      <div class="card-info">
+        <div class="card-row">
+          <span class="card-cat">Dev</span>
+          <span class="card-num">01</span>
+        </div>
+        <h3>Site AFC2L</h3>
+        <p>Refonte de site d'aviation en HTML, CSS et Bootstrap.</p>
+        <div class="card-tags">
+          <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="dev-project2.html" class="card">
+      <div class="card-img">
+        <img src="../img/salon.jpg" alt="Salon du Chocolat">
+        <div class="card-overlay"><span>Voir le projet →</span></div>
+      </div>
+      <div class="card-info">
+        <div class="card-row">
+          <span class="card-cat">Dev</span>
+          <span class="card-num">02</span>
+        </div>
+        <h3>Salon du Chocolat</h3>
+        <p>Webdocumentaire interactif en HTML, CSS et JavaScript.</p>
+        <div class="card-tags">
+          <span>HTML</span><span>CSS</span><span>JS</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="dev-project3.html" class="card">
+      <div class="card-img">
+        <img src="../img/acceuil.jpg" alt="Easy2Drive">
+        <div class="card-overlay"><span>Voir le projet →</span></div>
+      </div>
+      <div class="card-info">
+        <div class="card-row">
+          <span class="card-cat">Dev</span>
+          <span class="card-num">03</span>
+        </div>
+        <h3>Easy2Drive</h3>
+        <p>Plateforme de mise en relation auto-écoles / clients avec Angular.</p>
+        <div class="card-tags">
+          <span>Angular</span><span>PHP</span><span>API</span>
+        </div>
+      </div>
+    </a>
+
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">Trystan Kecket-Baker · Étudiant BUT MMI</p>
+    <div class="footer-links">
+      <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="mailto:prenom.nom@example.com">Email</a>
+    </div>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Trystan Kecket-Baker</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
