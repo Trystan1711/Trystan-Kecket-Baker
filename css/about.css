@@ -37,16 +37,15 @@
 
 .about-photo img {
   position: absolute;
-  /* L'image occupe 100vh en "longueur" et 240px en "largeur" avant rotation */
+  top: 50%;
+  left: 50%;
+  /* Avant rotation : largeur = hauteur du conteneur, hauteur = largeur du conteneur */
   width: 100vh;
   height: 240px;
   object-fit: cover;
   object-position: center;
-  /* On centre l'image dans le conteneur pour que la rotation soit propre */
-  top: calc(50vh - 120px);
-  left: calc(120px - 50vh);
-  transform-origin: center center;
-  transform: rotate(90deg);
+  /* Centre + rotation */
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 /* ═══════════════════════════════════
