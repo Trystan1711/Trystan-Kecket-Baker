@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ── Onglets Work / Info ───────────────────────────────────────
-  const mainTabs   = document.querySelectorAll(".tab-btn[data-tab]");
+  const mainTabs    = document.querySelectorAll(".tab-btn[data-tab]");
   const sectionWork = document.getElementById("section-work");
   const sectionInfo = document.getElementById("section-info");
 
@@ -13,43 +13,84 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       mainTabs.forEach((t) => t.classList.remove("active"));
       btn.classList.add("active");
-
       if (btn.dataset.tab === "work") {
         sectionWork?.classList.remove("is-hidden");
         sectionInfo?.classList.add("is-hidden");
       } else {
         sectionWork?.classList.add("is-hidden");
         sectionInfo?.classList.remove("is-hidden");
-        // Déclencher reveal si première ouverture
-        triggerReveal();
       }
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
-  // ── Filtre Dev / Design / Tous ────────────────────────────────
-  const filterBtns = document.querySelectorAll(".filter-btn[data-category]");
-  const cards      = document.querySelectorAll(".card[data-category]");
+  // ── Filtre Dev / Design ───────────────────────────────────────
+  const filterBtns  = document.querySelectorAll(".filter-btn[data-category]");
+  const grid        = document.getElementById("projects-grid");
+  const allCards    = document.querySelectorAll(".card[data-category]");
+  let   activeFilter = null; // aucun filtre actif au départ
 
   filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const cat = btn.dataset.category;
+
+      // Cliquer sur le bouton déjà actif → tout masquer
+      if (activeFilter === cat) {
+        activeFilter = null;
+        btn.classList.remove("active");
+        // Réinitialiser toutes les cards et cacher la grille
+        allCards.forEach((c) => {
+          c.classList.remove("card-in");
+          c.style.removeProperty("--delay");
+          c.style.opacity = "0";
+        });
+        grid.classList.remove("is-visible");
+        return;
+      }
+
+      // Nouveau filtre
+      activeFilter = cat;
       filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      const cat = btn.dataset.category;
+      // Réinitialiser les cards visibles
+      allCards.forEach((c) => {
+        c.classList.remove("card-in");
+        c.style.removeProperty("--delay");
+        c.style.opacity = "0";
+      });
 
-      cards.forEach((card) => {
-        if (cat === "all" || card.dataset.category === cat) {
-          card.classList.remove("is-hidden");
-          // Rejouer l'animation d'entrée
-          card.classList.remove("is-visible");
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => card.classList.add("is-visible"))
-          );
+      // Récupérer les cards correspondantes
+      const visible = [...allCards].filter(
+        (c) => c.dataset.category === cat
+      );
+
+      // Afficher la grille
+      grid.classList.add("is-visible");
+
+      // Masquer les cards qui ne correspondent pas
+      allCards.forEach((c) => {
+        if (c.dataset.category !== cat) {
+          c.style.display = "none";
         } else {
-          card.classList.add("is-hidden");
+          c.style.display = "";
         }
       });
+
+      // Déclencher l'animation en décalé (stagger)
+      requestAnimationFrame(() => {
+        visible.forEach((c, i) => {
+          c.style.setProperty("--delay", `${i * 0.12}s`);
+          // On force un reflow pour que l'animation reparte
+          void c.offsetWidth;
+          c.classList.add("card-in");
+        });
+      });
+
+      // Scroll doux vers la grille
+      setTimeout(() => {
+        grid.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 80);
     });
   });
 
@@ -64,28 +105,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── IntersectionObserver – reveal ─────────────────────────────
-  function triggerReveal() {
-    const revealEls = document.querySelectorAll(".reveal:not(.is-visible)");
-    if (!revealEls.length) return;
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("is-visible");
-              observer.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      revealEls.forEach((el) => observer.observe(el));
-    } else {
-      revealEls.forEach((el) => el.classList.add("is-visible"));
-    }
-  }
-
-  triggerReveal();
 });

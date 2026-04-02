@@ -2,62 +2,103 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Dessins digitaux – Hojo & co</title>
+  <title>Dessins Digitaux – Trystan Kecket-Baker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/projects.css">
 </head>
 <body>
 
-<header class="projects-header">
-  <a href="designer.html" class="home-link">← Retour aux projets artistiques</a>
-  <h1>Dessins digitaux</h1>
+<header class="proj-header">
+  <div class="proj-header-left">
+    <span class="proj-cat-badge">Artistique</span>
+    <span class="proj-title-small">Dessins Digitaux</span>
+  </div>
+  <div class="proj-header-right">
+    <span class="proj-tag">Clip Studio Paint</span>
+    <span class="proj-tag">Tablette graphique</span>
+    <span class="proj-tag">Illustration</span>
+  </div>
 </header>
 
-<main style="padding: 0 60px 60px; max-width: 1100px; margin: 0 auto;">
-  <p style="margin-bottom: 28px;">
-    Cela fait maintenant <strong>4 ans</strong> que je réalise des dessins digitaux
-    en utilisant le logiciel <strong>Clip Studio Paint</strong> associé à une
-    <strong>tablette graphique</strong>. Voici une sélection de quelques
-    illustrations personnelles.
-  </p>
+<div class="proj-hero">
+  <img src="../img/hojo.webp" alt="Illustration Hojo">
+</div>
 
-  <section style="display: grid; gap: 26px;">
-    <article>
-      <img src="../img/hojo.webp" alt="Illustration Hojo" style="width: 100%; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.18);">
-      <h2 style="margin: 14px 0 6px; font-size: 1.4rem;">Hojo</h2>
-      <p>
-        Illustration d’un personnage inspiré du manga, travaillée sur les
-        ombres, la lumière et un fond géométrique coloré pour dynamiser la
-        composition.
-      </p>
-    </article>
+<article class="proj-content">
 
-    <article>
-      <img src="../img/jhonny.png" alt="Illustration Jhonny" style="width: 100%; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.18);">
-      <h2 style="margin: 14px 0 6px; font-size: 1.4rem;">Jhonny</h2>
-      <p>
-        Dessin centré sur le character design : expression, pose et détails du
-        costume pour donner de la personnalité au personnage.
-      </p>
-    </article>
+  <div class="proj-intro">
+    <h1>Dessins Digitaux</h1>
+    <p>
+      Depuis 4 ans, je réalise des illustrations digitales avec Clip Studio Paint
+      et une tablette graphique. Voici une sélection de personnages et compositions
+      personnelles, explorant le character design, la lumière et la couleur.
+    </p>
+    <div class="proj-meta-row">
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Catégorie</span>
+        <span class="proj-meta-value">Illustration digitale</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Outil</span>
+        <span class="proj-meta-value">Clip Studio Paint</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Durée pratique</span>
+        <span class="proj-meta-value">4 ans</span>
+      </div>
+    </div>
+  </div>
 
-    <article>
-      <img src="../img/00.png" alt="Illustration 00" style="width: 100%; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.18);">
-      <h2 style="margin: 14px 0 6px; font-size: 1.4rem;">00</h2>
-      <p>
-        Illustration plus expérimentale, qui joue sur la couleur, les effets
-        de texture et l’ambiance générale pour raconter une petite histoire
-        visuelle.
-      </p>
-    </article>
-  </section>
-</main>
+  <div class="proj-section">
+    <h2>Hojo</h2>
+    <p>
+      Illustration d'un personnage inspiré du manga, travaillée sur les
+      ombres, la lumière et un fond géométrique coloré pour dynamiser la composition.
+    </p>
+  </div>
 
+  <figure class="proj-media">
+    <img src="../img/hojo.webp" alt="Illustration Hojo">
+    <figcaption>Hojo — personnage inspiré du manga</figcaption>
+  </figure>
+
+  <div class="proj-section">
+    <h2>Jhonny</h2>
+    <p>
+      Dessin centré sur le character design : expression, pose et détails du
+      costume pour donner de la personnalité au personnage.
+    </p>
+  </div>
+
+  <figure class="proj-media">
+    <img src="../img/jhonny.png" alt="Illustration Jhonny">
+    <figcaption>Jhonny — character design</figcaption>
+  </figure>
+
+  <div class="proj-section">
+    <h2>00</h2>
+    <p>
+      Illustration expérimentale jouant sur la couleur, les effets de texture
+      et l'ambiance générale pour raconter une histoire visuelle.
+    </p>
+  </div>
+
+  <figure class="proj-media">
+    <img src="../img/00.png" alt="Illustration 00">
+    <figcaption>00 — illustration expérimentale</figcaption>
+  </figure>
+
+</article>
+
+<footer class="proj-footer">
+  <a href="../index.html" class="proj-back">← Retour au portfolio</a>
+  <p class="proj-footer-copy">© <span id="year"></span> Trystan Kecket-Baker</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-

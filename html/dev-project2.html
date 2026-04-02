@@ -2,40 +2,89 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Montages vidéo – Motion design</title>
+  <title>Salon du Chocolat – Trystan Kecket-Baker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/projects.css">
 </head>
 <body>
 
-<header class="projects-header">
-  <a href="dev.html" class="home-link">← Retour aux dev</a>
-  <h1>Salon du Chocolat</h1>
+<header class="proj-header">
+  <div class="proj-header-left">
+    <span class="proj-cat-badge">Développement</span>
+    <span class="proj-title-small">Salon du Chocolat</span>
+  </div>
+  <div class="proj-header-right">
+    <span class="proj-tag">HTML</span>
+    <span class="proj-tag">CSS</span>
+    <span class="proj-tag">JavaScript</span>
+  </div>
 </header>
 
-<main style="padding: 0 60px 60px; max-width: 1100px; margin: 0 auto;">
-  <p style="margin-bottom: 28px;">
-    Création d’un webdocumentaire interactif dédié au Salon du Chocolat. Ce projet propose une expérience immersive combinant textes, audios, vidéos et interactions utilisateur. Réalisé en HTML et JavaScript, le site permet à l’utilisateur de découvrir l’événement de manière dynamique, en naviguant librement entre les différents contenus multimédias.
-  </p>
+<div class="proj-hero">
+  <img src="../img/salon.jpg" alt="Salon du Chocolat">
+</div>
 
-  <section style="display: grid; gap: 32px;">
-    <article>
-      <h2 style="margin-bottom: 10px; font-size: 1.4rem;">Salon du Chocolat</h2>
-      <img src="../img/salon.jpg" alt="Illustration Hojo" style="width: 100%; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.18);">
-        <p style="margin-top: 8px;">
-  
-      </p>
-    </article>
+<article class="proj-content">
 
-    
-  </section>
-</main>
+  <div class="proj-intro">
+    <h1>Salon du Chocolat</h1>
+    <p>
+      Création d'un webdocumentaire interactif dédié au Salon du Chocolat.
+      Ce projet propose une expérience immersive combinant textes, audios,
+      vidéos et interactions utilisateur pour découvrir l'événement de façon
+      dynamique.
+    </p>
+    <div class="proj-meta-row">
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Catégorie</span>
+        <span class="proj-meta-value">Développement web</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Stack</span>
+        <span class="proj-meta-value">HTML · CSS · JavaScript</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Type</span>
+        <span class="proj-meta-value">Webdocumentaire</span>
+      </div>
+    </div>
+  </div>
 
+  <div class="proj-section">
+    <h2>Contexte</h2>
+    <p>
+      Ce webdocumentaire a été réalisé dans le cadre du BUT MMI. L'enjeu était
+      de concevoir une expérience narrative numérique autour du Salon du Chocolat,
+      en combinant plusieurs types de médias pour rendre la navigation immersive
+      et engageante.
+    </p>
+  </div>
+
+  <figure class="proj-media">
+    <img src="../img/salon.jpg" alt="Aperçu du webdocumentaire">
+    <figcaption>Interface principale du webdocumentaire Salon du Chocolat</figcaption>
+  </figure>
+
+  <div class="proj-section">
+    <h2>Ce que j'ai réalisé</h2>
+    <p>
+      Conception de la structure narrative, intégration des médias (images,
+      sons, vidéos) en JavaScript, mise en place des interactions utilisateur
+      et travail sur l'expérience de navigation entre les différentes sections.
+    </p>
+  </div>
+
+</article>
+
+<footer class="proj-footer">
+  <a href="../index.html" class="proj-back">← Retour au portfolio</a>
+  <p class="proj-footer-copy">© <span id="year"></span> Trystan Kecket-Baker</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-

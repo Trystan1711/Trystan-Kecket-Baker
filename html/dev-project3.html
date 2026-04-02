@@ -2,41 +2,89 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Montages vidéo – Motion design</title>
+  <title>Easy2Drive – Trystan Kecket-Baker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/projects.css">
 </head>
 <body>
 
-<header class="projects-header">
-  <a href="dev.html" class="home-link">← Retour aux dev</a>
-  <h1>Site Easy2Drive</h1>
+<header class="proj-header">
+  <div class="proj-header-left">
+    <span class="proj-cat-badge">Développement</span>
+    <span class="proj-title-small">Easy2Drive</span>
+  </div>
+  <div class="proj-header-right">
+    <span class="proj-tag">Angular</span>
+    <span class="proj-tag">PHP</span>
+    <span class="proj-tag">API REST</span>
+  </div>
 </header>
 
-<main style="padding: 0 60px 60px; max-width: 1100px; margin: 0 auto;">
-  <p style="margin-bottom: 28px;">
-    Développement du site Easy2Drive, une plateforme web permettant de mettre en relation des auto-écoles et des clients. Le front-end a été développé avec le framework Angular, en mettant l’accent sur l’ergonomie, la fluidité de navigation et l’expérience utilisateur.
-Le projet inclut également la création et l’utilisation d’une API développée en PHP, testée et documentée à l’aide de Postman. Cette API permet la gestion des données (utilisateurs, auto-écoles, offres) et assure la communication entre le front-end et le back-end.
-  </p>
+<div class="proj-hero">
+  <img src="../img/acceuil.jpg" alt="Easy2Drive">
+</div>
 
-  <section style="display: grid; gap: 32px;">
-    <article>
-      <h2 style="margin-bottom: 10px; font-size: 1.4rem;">Easy2Drive</h2>
-      <img src="../img/acceuil.jpg" alt="Illustration Hojo" style="width: 100%; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.18);">
-        <p style="margin-top: 8px;">
-  
-      </p>
-    </article>
+<article class="proj-content">
 
-    
-  </section>
-</main>
+  <div class="proj-intro">
+    <h1>Easy2Drive</h1>
+    <p>
+      Développement d'une plateforme web permettant de mettre en relation
+      des auto-écoles et des clients. Le front-end a été développé avec Angular,
+      et le back-end avec une API PHP documentée via Postman.
+    </p>
+    <div class="proj-meta-row">
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Catégorie</span>
+        <span class="proj-meta-value">Application web</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Stack</span>
+        <span class="proj-meta-value">Angular · PHP · Postman</span>
+      </div>
+      <div class="proj-meta-item">
+        <span class="proj-meta-label">Type</span>
+        <span class="proj-meta-value">Full Stack</span>
+      </div>
+    </div>
+  </div>
 
+  <div class="proj-section">
+    <h2>Contexte</h2>
+    <p>
+      L'objectif était de créer une plateforme de mise en relation entre
+      auto-écoles et candidats au permis de conduire. Le projet couvre
+      à la fois le front-end Angular (ergonomie et fluidité) et le back-end
+      PHP (gestion des données, API REST).
+    </p>
+  </div>
+
+  <figure class="proj-media">
+    <img src="../img/acceuil.jpg" alt="Interface Easy2Drive">
+    <figcaption>Page d'accueil de la plateforme Easy2Drive</figcaption>
+  </figure>
+
+  <div class="proj-section">
+    <h2>Architecture technique</h2>
+    <p>
+      Le front-end Angular gère la navigation entre les vues (liste des
+      auto-écoles, profils, réservation). L'API PHP, testée et documentée
+      avec Postman, assure la communication entre le front et la base de données :
+      gestion des utilisateurs, des auto-écoles et des offres disponibles.
+    </p>
+  </div>
+
+</article>
+
+<footer class="proj-footer">
+  <a href="../index.html" class="proj-back">← Retour au portfolio</a>
+  <p class="proj-footer-copy">© <span id="year"></span> Trystan Kecket-Baker</p>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-

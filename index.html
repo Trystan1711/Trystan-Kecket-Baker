@@ -59,92 +59,135 @@
     </div>
   </div>
 
-  <!-- FILTRE + GRILLE DE PROJETS -->
+  <!-- ZONE PROJETS -->
   <div class="projects-section" id="projects">
 
+    <!-- Boutons de filtre -->
     <div class="projects-filter">
-      <button class="filter-btn active" data-category="all">Tous</button>
-      <button class="filter-btn" data-category="dev">Développement</button>
-      <button class="filter-btn" data-category="design">Artistique</button>
+      <button class="filter-btn" data-category="dev">
+        <span class="filter-label">Développement</span>
+        <span class="filter-count">3 projets</span>
+      </button>
+      <button class="filter-btn" data-category="design">
+        <span class="filter-label">Artistique</span>
+        <span class="filter-count">3 projets</span>
+      </button>
     </div>
 
-    <div class="projects-grid">
+    <!-- Grille (cachée par défaut) -->
+    <div class="projects-grid" id="projects-grid">
 
-      <a href="html/dev-project1.html" class="card reveal" data-category="dev">
-        <div class="card-thumb">
+      <a href="html/dev-project1.html" class="card" data-category="dev">
+        <div class="card-img">
           <img src="img/afc2l.jpg" alt="Site AFC2L">
-          <span class="card-cat">Dev</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">01</span>
+          </div>
           <h3>Site AFC2L</h3>
           <p>Refonte de site d'aviation en HTML, CSS et Bootstrap.</p>
-          <span class="card-tag">HTML · CSS · Bootstrap</span>
+          <div class="card-tags">
+            <span>HTML</span><span>CSS</span><span>Bootstrap</span>
+          </div>
         </div>
       </a>
 
-      <a href="html/dev-project2.html" class="card reveal" data-category="dev">
-        <div class="card-thumb">
+      <a href="html/dev-project2.html" class="card" data-category="dev">
+        <div class="card-img">
           <img src="img/salon.jpg" alt="Salon du Chocolat">
-          <span class="card-cat">Dev</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">02</span>
+          </div>
           <h3>Salon du Chocolat</h3>
           <p>Webdocumentaire interactif en HTML, CSS et JavaScript.</p>
-          <span class="card-tag">HTML · CSS · JS</span>
+          <div class="card-tags">
+            <span>HTML</span><span>CSS</span><span>JS</span>
+          </div>
         </div>
       </a>
 
-      <a href="html/dev-project3.html" class="card reveal" data-category="dev">
-        <div class="card-thumb">
+      <a href="html/dev-project3.html" class="card" data-category="dev">
+        <div class="card-img">
           <img src="img/acceuil.jpg" alt="Easy2Drive">
-          <span class="card-cat">Dev</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Dev</span>
+            <span class="card-num">03</span>
+          </div>
           <h3>Easy2Drive</h3>
           <p>Plateforme de mise en relation auto-écoles / clients avec Angular.</p>
-          <span class="card-tag">Angular · PHP · API</span>
+          <div class="card-tags">
+            <span>Angular</span><span>PHP</span><span>API</span>
+          </div>
         </div>
       </a>
 
-      <a href="html/design-project1.html" class="card reveal" data-category="design">
-        <div class="card-thumb">
+      <a href="html/design-project1.html" class="card" data-category="design">
+        <div class="card-img">
           <img src="img/cala.jpg" alt="Tête de mort 3D">
-          <span class="card-cat">Artistique</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">01</span>
+          </div>
           <h3>Tête de mort</h3>
           <p>Modélisation 3D d'une calaveras et présentation de projets 3D.</p>
-          <span class="card-tag">3D · Modélisation</span>
+          <div class="card-tags">
+            <span>3D</span><span>Modélisation</span>
+          </div>
         </div>
       </a>
 
-      <a href="html/design-project2.html" class="card reveal" data-category="design">
-        <div class="card-thumb">
+      <a href="html/design-project2.html" class="card" data-category="design">
+        <div class="card-img">
           <img src="img/hojo.webp" alt="Hojo – Dessins digitaux">
-          <span class="card-cat">Artistique</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">02</span>
+          </div>
           <h3>Hojo</h3>
           <p>Présentation de dessins réalisés au digital.</p>
-          <span class="card-tag">Digital · Dessin</span>
+          <div class="card-tags">
+            <span>Digital</span><span>Dessin</span>
+          </div>
         </div>
       </a>
 
-      <a href="html/design-project3.html" class="card reveal" data-category="design">
-        <div class="card-thumb">
+      <a href="html/design-project3.html" class="card" data-category="design">
+        <div class="card-img">
           <img src="img/montage.jpg" alt="Montages vidéos">
-          <span class="card-cat">Artistique</span>
+          <div class="card-overlay"><span>Voir le projet →</span></div>
         </div>
-        <div class="card-body">
+        <div class="card-info">
+          <div class="card-row">
+            <span class="card-cat">Artistique</span>
+            <span class="card-num">03</span>
+          </div>
           <h3>Montages vidéos</h3>
           <p>Présentation de mes montages et productions vidéo.</p>
-          <span class="card-tag">Vidéo · Montage</span>
+          <div class="card-tags">
+            <span>Vidéo</span><span>Montage</span>
+          </div>
         </div>
       </a>
 
-    </div>
-  </div>
-</div>
+    </div><!-- /projects-grid -->
+  </div><!-- /projects-section -->
+</div><!-- /section-work -->
 
 <!-- ═══ SECTION INFO ═══ -->
 <div class="section-info is-hidden" id="section-info">
